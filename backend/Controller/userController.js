@@ -5,7 +5,7 @@ const ProfileModel = require("../Model/ProfileModel");
 const datasave = async (req, res) => {
   console.log(req.body);
 
-  const { uname, uemail ,fname,lname} = req.body;
+  const { uname, uemail, fname, lname } = req.body;
   const User =  await UserModel.create({
     uname: uname,
     uemail: uemail,

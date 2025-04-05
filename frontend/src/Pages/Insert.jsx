@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import axios from "axios"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/esm/Container';
 
 const Insert = () => {
   const [input , setInput] = useState({})
@@ -29,38 +30,46 @@ const Insert = () => {
   }
   return (
     <>
+
+<Container style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column"}}>
+<h1>student info</h1>
+
+
+
+
+
+<Form  style={{width:"400px"}}>
+<Form.Group className="mb-3" controlId="formBasicEmail">
+
+  <Form.Label>user name</Form.Label>
+  <Form.Control type="email" name='uname' value={input.uname} onChange={inputHandle} />
+
+  <Form.Label>user email</Form.Label>
+  <Form.Control type="email" name='uemail' value={input.uemail} onChange={inputHandle} />
+
+
+
+  <Form.Label>first name</Form.Label>
+  <Form.Control type="email" name='fname' value={input.fname} onChange={inputHandle} />
+
+
+
+  <Form.Label> Last name</Form.Label>
+  <Form.Control type="email" name='lname' value={input.lname} onChange={inputHandle} />
+
+  
+</Form.Group>
+
+
+
+<Button variant="primary" onClick={handleSubmit} >
+  Submit
+</Button>
+</Form>
+
+</Container>
     
-    <h1>student info</h1>
-
-
-
-
-
-      <Form  style={{width:"400px"}}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-
-        <Form.Label>user name</Form.Label>
-        <Form.Control type="email" name='uname' value={input.uname} onChange={inputHandle} />
-
-        <Form.Label>user email</Form.Label>
-        <Form.Control type="email" name='uemail' value={input.uemail} onChange={inputHandle} />
-
-
-        <Form.Label>first name</Form.Label>
-        <Form.Control type="email" name='fname' value={input.fname} onChange={inputHandle} />
-
-        <Form.Label> Last name</Form.Label>
-        <Form.Control type="email" name='lname' value={input.lname} onChange={inputHandle} />
-
-        
-      </Form.Group>
-
-     
-      
-      <Button variant="primary" onClick={handleSubmit} >
-        Submit
-      </Button>
-    </Form>
+   
     
     </>
   )

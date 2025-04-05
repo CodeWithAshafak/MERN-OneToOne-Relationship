@@ -51,7 +51,7 @@ const Display = () => {
         </tbody>
         
         
-      </table>
+        </table>
      </center>
     
     </>
